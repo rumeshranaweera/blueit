@@ -4,10 +4,16 @@ import { buttonVariants } from "@/components/ui/Button";
 import { getAuthSession } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { Home as HomeIcon } from "lucide-react";
+import { Metadata } from "next";
 import Link from "next/link";
 
 export const dynamic = "force-dynamic";
 export const fetchCache = "force-no-store";
+
+export const metadata: Metadata = {
+  title: "BlueIt",
+  description: "Reddit clone by rumesh",
+};
 
 export default async function Home() {
   const communities =
