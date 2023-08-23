@@ -53,13 +53,13 @@ export default async function Home() {
               {results?.map((link) => {
                 return (
                   <>
-                    <Link
+                    <a
                       href={`r/${link.subreddit.name}`}
                       key={link.subreddit.name}
                       className="inline-block font-normal hover:underline decoration-sky-400 decoration-2"
                     >
                       r/ {link.subreddit.name}
-                    </Link>
+                    </a>
                     <br />
                   </>
                 );
