@@ -8,7 +8,7 @@ import { CreateSubredditPayload } from "@/lib/validators/subreddit";
 import { useMutation } from "@tanstack/react-query";
 import axios, { AxiosError } from "axios";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Page = () => {
   const router = useRouter();
@@ -57,6 +57,8 @@ const Page = () => {
       router.push(`/r/${data}`);
     },
   });
+
+  useEffect(() => router.refresh(), []);
 
   return (
     <div className="container flex items-center h-full max-w-3xl mx-auto">
